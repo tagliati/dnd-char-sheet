@@ -1,6 +1,5 @@
 import { createStore } from "redux";
-function hero() {
-  return [];
-}
-const store = createStore(hero);
+import rootReducer from "./modules/rootReducer";
+
+const store = createStore(rootReducer);
 export default store;
