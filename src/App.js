@@ -13,30 +13,26 @@ export default function App() {
   });
   const [totalPoints, setTotalPoints] = useState(27);
 
-  function handleIncreaseAttribute() {
-    hero.str = hero.str + 1;
+  function handleAttribute(attribute, value) {
+    hero[attribute] = hero[attribute] + value;
     setHeroData(hero);
-    setTotalPoints(totalPoints - 1);
-  }
-
-  function handleDecreaseAttribute() {
-    hero.str = hero.str - 1;
-    setHeroData(hero);
-    setTotalPoints(totalPoints + 1);
+    setTotalPoints(totalPoints - value);
   }
 
   return (
     <CharSheet>
       totalPoints ({totalPoints})
       <br />
-      str({hero.str}) int({hero.int}) dex({hero.dex}) wis({hero.wis}) cons(
-      {hero.cons}) char({hero.char})
-      <button type="button" onClick={() => handleIncreaseAttribute(1)}>
+      str({hero.str})
+      <button type="button" onClick={() => handleAttribute("str", 1)}>
         <MdAddCircle size={16} />
       </button>
-      <button type="button" onClick={() => handleDecreaseAttribute(1)}>
+      <button type="button" onClick={() => handleAttribute("str", -1)}>
         <MdRemoveCircle size={16} />
       </button>
+      int({hero.int}) dex(
+      {hero.dex}) wis({hero.wis}) cons(
+      {hero.cons}) char({hero.char})
     </CharSheet>
   );
 }

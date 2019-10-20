@@ -1,3 +1,4 @@
 - Create points distributions by attribute
 - Limit points according rules
 - calculate bonuses
+- add style components
